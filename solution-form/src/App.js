@@ -4,6 +4,7 @@ import AppLayout from "./Components/AppLayout";
 import FinishingUp from "./Components/FinishingUp";
 import PersonalInfo from "./Components/PersonalInfo";
 import Plan from "./Components/Plan";
+import Thankyou from "./Components/Thankyou";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "finishing-up",
         element: <FinishingUp />,
+      },
+      {
+        path: "thankyou",
+        element: <Thankyou />,
       },
     ],
   },
