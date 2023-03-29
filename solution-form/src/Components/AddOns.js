@@ -11,8 +11,8 @@ const AddOns = () => {
   const { game, storage, profile } = isChecked ? yearlyAddOns : monthlyAddOns;
 
   return (
-    <div className="px-20 py-4">
-      <h1 className="text-4xl py-2 font-bold">Pick add-ons</h1>
+    <div className="sm:px-20 px-3 py-4">
+      <h1 className="md:text-4xl text-xl py-2 font-bold">Pick add-ons</h1>
       <p className="text-gray-400 text-base ">
         Add-ons help enhance your gaming experience.
       </p>

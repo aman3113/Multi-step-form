@@ -24,8 +24,8 @@ const FinishingUp = () => {
   const totalPrice = planPrice + gameAddOn + storageAddOn;
 
   return (
-    <div className="px-20 py-8 ">
-      <h1 className="text-4xl py-2 font-bold">Finishing Up</h1>
+    <div className="sm:px-20 px-3 py-8 ">
+      <h1 className="md:text-4xl text-xl py-2 font-bold">Finishing Up</h1>
       <p className="text-gray-400 text-base ">
         Double-check everything looks OK before confirming.
       </p>

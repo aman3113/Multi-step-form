@@ -24,8 +24,8 @@ const PersonalInfo = () => {
   }
 
   return (
-    <div className="px-20 py-4 ">
-      <h2 className="text-4xl py-2 font-bold">Personal Info</h2>
+    <div className="sm:px-20 px-3 py-4 ">
+      <h2 className="md:text-4xl text-xl py-2 font-bold">Personal Info</h2>
       <p className="text-gray-400 text-base">
         Please provide your name, email address and phone number
       </p>
