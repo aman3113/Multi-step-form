@@ -1,20 +1,26 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setSelectedAddOn } from "../Store/planSlice";
 
 const AddOns = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const plan = useSelector((store) => store.plan);
-  const { isChecked, monthlyAddOns, yearlyAddOns } = plan;
+  const { isChecked, monthlyAddOns, yearlyAddOns, selectedAddOn } = plan;
   const { game, storage, profile } = isChecked ? yearlyAddOns : monthlyAddOns;
+
   return (
-    <div className="px-20 py-12 border-2 border-red-500 w-[75%]">
+    <div className="px-20 py-4">
       <h1 className="text-4xl py-2 font-bold">Pick add-ons</h1>
       <p className="text-gray-400 text-base ">
         Add-ons help enhance your gaming experience.
       </p>
-      <div className="w-[60%] my-5 gap-5 flex flex-col">
-        <div className="flex justify-between items-center gap-2 w-full p-4 border-2 border-gray-400 rounded-xl">
+      <div className="lg:w-[80%] w-full my-5 gap-5 flex flex-col">
+        <div
+          onClick={() => dispatch(setSelectedAddOn(1))}
+          className={`flex justify-between items-center gap-2 w-full p-4 border-2 rounded-xl border-blue-800 cursor-pointer`}
+        >
           <input type="checkbox" className="w-5 h-5" checked />
           <div className="w-[70%]">
             <h2 className="text-base text-blue-900 font-bold">
@@ -26,8 +32,19 @@ const AddOns = () => {
             +${game}/{isChecked ? "yr" : "mo"}
           </span>
         </div>
-        <div className="flex justify-between items-center gap-2 w-full p-4 border-2 border-gray-400 rounded-xl">
-          <input type="checkbox" className="w-5 h-5" checked />
+        <div
+          onClick={() => dispatch(setSelectedAddOn(2))}
+          className={`flex justify-between items-center gap-2 w-full p-4 border-2 rounded-xl ${
+            selectedAddOn === 2
+              ? "border-blue-800"
+              : " border-gray-400 cursor-pointer"
+          }`}
+        >
+          <input
+            type="checkbox"
+            className="w-5 h-5"
+            checked={selectedAddOn === 2}
+          />
           <div className="w-[70%]">
             <h2 className="text-base text-blue-900 font-bold">
               Larger Storage
@@ -38,8 +55,19 @@ const AddOns = () => {
             +${storage}/{isChecked ? "yr" : "mo"}
           </span>
         </div>
-        <div className="flex justify-between items-center gap-2 w-full p-4 border-2 border-gray-400 rounded-xl">
-          <input type="checkbox" className="w-5 h-5" />
+        <div
+          onClick={() => dispatch(setSelectedAddOn(3))}
+          className={`flex justify-between items-center gap-2 w-full p-4 border-2 rounded-xl ${
+            selectedAddOn === 3
+              ? "border-blue-800"
+              : " border-gray-400 cursor-pointer"
+          }`}
+        >
+          <input
+            type="checkbox"
+            className="w-5 h-5"
+            checked={selectedAddOn === 3}
+          />
           <div className="w-[70%]">
             <h2 className="text-base text-blue-900 font-bold">
               Customizable profile
@@ -53,7 +81,7 @@ const AddOns = () => {
           </span>
         </div>
       </div>
-      <div className="w-[60%] flex justify-between p-4">
+      <div className="lg:w-[80%] w-full flex justify-between p-4">
         <button onClick={() => navigate("/plan-page")}>Go Back</button>
         <button
           onClick={() => navigate("/finishing-up")}

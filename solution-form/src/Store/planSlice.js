@@ -5,6 +5,7 @@ const planSlice = createSlice({
   initialState: {
     isChecked: false,
     selectedPlan: "arcade",
+    selectedAddOn: 1,
     monthlyPlan: {
       arcade: 9,
       advanced: 12,
@@ -33,8 +34,12 @@ const planSlice = createSlice({
     setSelectedPlan(state, actions) {
       state.selectedPlan = actions.payload;
     },
+    setSelectedAddOn(state, actions) {
+      state.selectedAddOn = actions.payload;
+    },
   },
 });
 
-export const { handlePlan, setSelectedPlan } = planSlice.actions;
+export const { handlePlan, setSelectedPlan, setSelectedAddOn } =
+  planSlice.actions;
 export default planSlice;

@@ -14,53 +14,59 @@ const Plan = () => {
 
   const { arcade, advanced, pro } = isChecked ? yearlyPlan : monthlyPlan;
   return (
-    <div className="px-20 py-12 border-2 border-red-500 w-[75%]">
+    <div className="px-20 py-12">
       <h1 className="text-4xl py-2 font-bold">Select Your Plan</h1>
       <p className="text-gray-400 text-base ">
         You have the option of yearly or monthly billing.
       </p>
-      <div className="flex w-[70%] p-2 justify-between my-4">
+      <div className="flex flex-col lg:flex-row w-full lg:w-[75%] gap-4 justify-between my-4">
         <div
           onClick={() => dispatch(setSelectedPlan("arcade"))}
           className={`border-2 ${
             selectedPlan === "arcade" ? "border-blue-900" : "border-gray-300"
-          }  p-4 rounded-xl w-[30%] cursor-pointer`}
+          }  p-4 gap-4 lg:gap-0 rounded-xl lg:w-[30%] cursor-pointer w-full flex lg:flex-col items-center lg:items-start`}
         >
           <img src={Arcade} alt="arcade img" className="my-5" />
-          <p>Arcade</p>
-          <p className="text-gray-400 text-base">
-            ${arcade}/{isChecked ? "yr" : "mo"}
-          </p>
-          {isChecked ? <p className="text-sm">2 months free</p> : null}
+          <div>
+            <p>Arcade</p>
+            <p className="text-gray-400 text-base">
+              ${arcade}/{isChecked ? "yr" : "mo"}
+            </p>
+            {isChecked ? <p className="text-sm">2 months free</p> : null}
+          </div>
         </div>
         <div
           onClick={() => dispatch(setSelectedPlan("advanced"))}
           className={`border-2 ${
             selectedPlan === "advanced" ? "border-blue-900" : "border-gray-300"
-          }  p-4 rounded-xl w-[30%] cursor-pointer`}
+          }  p-4 gap-4 lg:gap-0 rounded-xl lg:w-[30%] cursor-pointer w-full flex lg:flex-col items-center lg:items-start`}
         >
           <img src={Advanced} alt="arcade img" className="my-5" />
-          <p>Advanced</p>
-          <p className="text-gray-400 text-base">
-            ${advanced}/{isChecked ? "yr" : "mo"}
-          </p>
-          {isChecked ? <p className="text-sm">2 months free</p> : null}
+          <div>
+            <p>Advanced</p>
+            <p className="text-gray-400 text-base">
+              ${advanced}/{isChecked ? "yr" : "mo"}
+            </p>
+            {isChecked ? <p className="text-sm">2 months free</p> : null}
+          </div>
         </div>
         <div
           onClick={() => dispatch(setSelectedPlan("pro"))}
           className={`border-2 ${
             selectedPlan === "pro" ? "border-blue-900" : "border-gray-300"
-          }  p-4 rounded-xl w-[30%] cursor-pointer`}
+          }  p-4 gap-4 lg:gap-0 rounded-xl lg:w-[30%] cursor-pointer w-full flex lg:flex-col items-center lg:items-start`}
         >
           <img src={Pro} alt="arcade img" className="my-5" />
-          <p>Pro</p>
-          <p className="text-gray-400 text-base">
-            ${pro}/{isChecked ? "yr" : "mo"}
-          </p>
-          {isChecked ? <p className="text-sm">2 months free</p> : null}
+          <div>
+            <p>Pro</p>
+            <p className="text-gray-400 text-base">
+              ${pro}/{isChecked ? "yr" : "mo"}
+            </p>
+            {isChecked ? <p className="text-sm">2 months free</p> : null}
+          </div>
         </div>
       </div>
-      <div className="w-[70%] bg-sky-100 rounded-xl flex justify-center p-3">
+      <div className="w-full lg:w-[75%] bg-sky-100 rounded-xl flex justify-center p-3">
         <div className="flex gap-5">
           <span>Monthly</span>
           <span>
@@ -69,13 +75,14 @@ const Plan = () => {
               type="checkbox"
               role="switch"
               id="flexSwitchCheckDefault01"
+              checked={isChecked}
               onClick={() => dispatch(handlePlan())}
             />
           </span>
           <span>Yearly</span>
         </div>
       </div>
-      <div className="w-[70%] flex justify-between p-4">
+      <div className="lg:w-[75%] w-full flex justify-between p-4">
         <button onClick={() => navigate("/")}>Go Back</button>
         <button
           onClick={() => navigate("/add-ons")}

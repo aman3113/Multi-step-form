@@ -3,7 +3,7 @@ import Thanks from "../assets/images/icon-thank-you.svg";
 
 const Thankyou = () => {
   return (
-    <div className="flex justify-center items-center w-[75%] p-16">
+    <div className="flex justify-center items-center min-h-[70vh] p-16">
       <div className="w-[60%] flex flex-col items-center">
         <img src={Thanks} alt="thankyou" />
         <p className="text-center mt-6 text-gray-500">

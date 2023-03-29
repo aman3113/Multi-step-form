@@ -24,7 +24,7 @@ const PersonalInfo = () => {
   }
 
   return (
-    <div className="px-20 py-12 border-2 border-red-500 w-[75%]">
+    <div className="px-20 py-4 ">
       <h2 className="text-4xl py-2 font-bold">Personal Info</h2>
       <p className="text-gray-400 text-base">
         Please provide your name, email address and phone number
@@ -34,7 +34,7 @@ const PersonalInfo = () => {
           Name
         </label>
         <input
-          className=" border-2 border-gray-400 rounded-lg  p-2 text-base md:w-[60%] mt-1 mb-3"
+          className=" border-2 border-gray-400 rounded-lg  p-2 text-base lg:w-[70%] w-full mt-1 mb-3"
           type="text"
           id="nameInput"
           name="name"
@@ -47,7 +47,7 @@ const PersonalInfo = () => {
           Email
         </label>
         <input
-          className=" border-2 border-gray-400 rounded-lg  p-2 text-base md:w-[60%] mt-1 mb-3"
+          className=" border-2 border-gray-400 rounded-lg  p-2 text-base lg:w-[70%] w-full mt-1 mb-3"
           type="email"
           id="emailInput"
           name="email"
@@ -60,7 +60,7 @@ const PersonalInfo = () => {
           Phone number
         </label>
         <input
-          className=" border-2 border-gray-400 rounded-lg  p-2 text-base md:w-[60%] mt-1 mb-3"
+          className=" border-2 border-gray-400 rounded-lg  p-2 text-base lg:w-[70%] w-full mt-1 mb-3"
           type="number"
           id="phoneInput"
           name="phone"
@@ -74,7 +74,7 @@ const PersonalInfo = () => {
           Please fill the credentials
         </p>
       ) : null}
-      <div className="flex justify-end w-[60%]">
+      <div className="flex justify-end lg:w-[70%] w-full">
         <button
           onClick={submitHandler}
           className="ml-auto px-3 py-2 bg-blue-900 text-white rounded-lg"

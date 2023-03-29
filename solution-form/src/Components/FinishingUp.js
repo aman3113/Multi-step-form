@@ -12,6 +12,7 @@ const FinishingUp = () => {
     monthlyAddOns,
     yearlyAddOns,
     selectedPlan,
+    selectedAddOn,
   } = plan;
 
   const planPrice = isChecked
@@ -19,17 +20,16 @@ const FinishingUp = () => {
     : monthlyPlan[selectedPlan];
   const gameAddOn = isChecked ? yearlyAddOns.game : monthlyAddOns.game;
   const storageAddOn = isChecked ? yearlyAddOns.storage : monthlyAddOns.storage;
-  // const profileAddOn = isChecked ? yearlyAddOns.storage : monthlyAddOns.storage;
 
   const totalPrice = planPrice + gameAddOn + storageAddOn;
 
   return (
-    <div className="px-20 py-12 border-2 border-red-500 w-[75%]">
+    <div className="px-20 py-8 ">
       <h1 className="text-4xl py-2 font-bold">Finishing Up</h1>
       <p className="text-gray-400 text-base ">
         Double-check everything looks OK before confirming.
       </p>
-      <div className="bg-blue-50 w-[70%] p-6 rounded-xl mt-8">
+      <div className="bg-blue-50 lg:w-[80%] w-full p-6 rounded-xl mt-8">
         <div className="w-full flex justify-between items-center mb-3 ">
           <div>
             <div className="text-lg text-blue-900">
@@ -51,13 +51,15 @@ const FinishingUp = () => {
           </div>
         </div>
         <div className="w-full flex justify-between items-center">
-          <div className="text-sm text-gray-400">Larger Storage</div>
+          <div className="text-sm text-gray-400">
+            {selectedAddOn === 2 ? "Local Storage" : "Customizable Profile"}
+          </div>
           <div className="text-sm text-blue-800">
             +${storageAddOn}/{isChecked ? "yr" : "mo"}
           </div>
         </div>
       </div>
-      <div className="w-[70%] p-6 flex justify-between items-center">
+      <div className="lg:w-[80%] w-full p-6 flex justify-between items-center">
         <div className="text-sm text-gray-400">
           Total ({isChecked ? "per year" : "per month"})
         </div>
@@ -65,7 +67,7 @@ const FinishingUp = () => {
           +${totalPrice}/{isChecked ? "yr" : "mo"}
         </div>
       </div>
-      <div className="w-[70%] flex justify-between p-4">
+      <div className="w-full lg:w-[80%] flex justify-between p-4">
         <button onClick={() => navigate("/add-ons")}>Go Back</button>
         <button
           onClick={() => navigate("/thankyou")}
