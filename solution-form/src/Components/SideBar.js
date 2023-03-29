@@ -1,11 +1,15 @@
 import React from "react";
 // import Background from "../assets/images/bg-sidebar-desktop.svg";
 
-const SideBar = () => {
+const SideBar = ({ path }) => {
   return (
     <div className=" sideBar lg:w-[25%] h-[30vh] lg:h-auto pl-6 py-7 lg:mr-6 rounded-xl flex lg:flex-col justify-center  items-start lg:justify-start lg:gap-4 gap-8">
       <div className="flex items-center">
-        <span className=" p-3  rounded-[50%] border-2 border-white text-white flex items-center justify-center w-10 h-10">
+        <span
+          className={` p-3  rounded-[50%] border-2 border-white ${
+            path === "/" ? "text-black bg-sky-200" : "text-white"
+          } flex items-center justify-center w-10 h-10`}
+        >
           1
         </span>
         <div className="flex-col lg:flex p-2 hidden">
@@ -16,7 +20,11 @@ const SideBar = () => {
         </div>
       </div>
       <div className="flex items-center">
-        <span className=" p-3  rounded-[50%] border-2 border-white text-white flex items-center justify-center w-10 h-10">
+        <span
+          className={` p-3  rounded-[50%] border-2 border-white ${
+            path === "/plan-page" ? "text-black bg-sky-200" : "text-white"
+          } flex items-center justify-center w-10 h-10`}
+        >
           2
         </span>
         <div className="flex-col lg:flex hidden p-2">
@@ -27,7 +35,11 @@ const SideBar = () => {
         </div>
       </div>
       <div className="flex items-center">
-        <span className=" p-3  rounded-[50%] border-2 border-white text-white flex items-center justify-center w-10 h-10">
+        <span
+          className={` p-3  rounded-[50%] border-2 border-white ${
+            path === "/add-ons" ? "text-black bg-sky-200" : "text-white"
+          } flex items-center justify-center w-10 h-10`}
+        >
           3
         </span>
         <div className="flex-col lg:flex hidden p-2">
@@ -38,7 +50,11 @@ const SideBar = () => {
         </div>
       </div>
       <div className="flex items-center">
-        <span className=" p-3 border-2 border-white text-white rounded-[50%] flex items-center justify-center w-10 h-10">
+        <span
+          className={` p-3  rounded-[50%] border-2 border-white ${
+            path === "/finishing-up" ? "text-black bg-sky-200" : "text-white"
+          } flex items-center justify-center w-10 h-10`}
+        >
           4
         </span>
         <div className="flex-col lg:flex hidden p-2">

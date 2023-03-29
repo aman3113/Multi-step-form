@@ -1,4 +1,8 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  useLocation,
+} from "react-router-dom";
 import AddOns from "./Components/AddOns";
 import AppLayout from "./Components/AppLayout";
 import FinishingUp from "./Components/FinishingUp";

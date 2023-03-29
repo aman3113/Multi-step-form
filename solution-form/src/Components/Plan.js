@@ -82,7 +82,7 @@ const Plan = () => {
           <span>Yearly</span>
         </div>
       </div>
-      <div className="lg:w-[75%] w-full flex justify-between p-4">
+      <div className="lg:w-[75%] w-full flex justify-between p-4 mt-10">
         <button onClick={() => navigate("/")}>Go Back</button>
         <button
           onClick={() => navigate("/add-ons")}
